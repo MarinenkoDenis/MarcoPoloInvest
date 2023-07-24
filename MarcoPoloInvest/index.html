@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarcoPoloInvest</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="apple-touch-icon" sizes="57x57" href="/img/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/img/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/img/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/img/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/img/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/img/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/img/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/img/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/img/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/img/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/icons/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <script>
+        if ('serviceWorker' in navigator) {
+          window.addEventListener('load', function() {
+            navigator.serviceWorker.register('/sw.js').then(function(registration) {
+              // Registration was successful
+              console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            }, function(err) {
+              // registration failed :(
+              console.log('ServiceWorker registration failed: ', err);
+            });
+          });
+        }
+    </script>
+</head>
+<body>
+    <header class="header">
+        <div class="wrapper">
+            <div class="wrapper_header">
+                <div class="header_logo">
+                    <a href="#intro"><img src="./img/svg/flag 1.svg" alt="logo"></a>
+                </div> 
+            
+                <nav class="header_nav">
+                    <ul class="header__list">
+                        <li class="header__item">
+                            <a href="#sale" class="header__link">Услуги</a>
+                        </li>
+                        <li class="header__item">
+                            <a href="#about_us" class="header__link">О компании</a>
+                        </li>
+                        <li class="header__item">
+                            <a href="#more_inform-cards" class="header__link">Контакты</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <section class="intro" id="intro">
+            <div class="wrapper">
+                <h1 class="intro_title">
+                    <span class="intro_title__highlight">И</span>СКУССТВО УПРАВЛЕНИЯ
+                </h1>
+                <h1 class="intro_title">ЧАСТНЫМ КАПИТОЛОМ</h1>
+                <h2 class="intro_content">ДОВЕРИТЕЛЬНОЕ УПРАВЛЕНИЕ</h2>
+            </div>
+        </section>
+        <section class="sale" id="sale">
+            <div class="wrapper">
+                <div class="sale_cards">
+                    <div class="sale_card">
+                        <div class="sale_card-dsc">
+                            <h1 class="sale_card-dsc-title">"Фонд первичных размещений"</h1>
+                            <p class="sale_card-dsc-item">Зарабатывайте на IPO мировых компаний</p>
+                        </div>
+                    </div>
+                    <div class="sale_card">
+                        <div class="sale_card-dsc">
+                            <h1 class="sale_card-dsc-title">"Фонд индустрии будущего"</h1>
+                            <p class="sale_card-dsc-item">Инвестируйте в акции иностранных эмитентов из перспективных индустрий</p>
+                        </div>
+                    </div>
+                    <div class="sale_card">
+                        <div class="sale_card-dsc">
+                            <h1 class="sale_card-dsc-title">"Фонд лидеры технологий"</h1>
+                            <p class="sale_card-dsc-item">Вложите деньги в акции технологических лидеров с листнингом в США</p>
+                        </div>
+                    </div>
+                    <div class="sale_card">
+                        <div class="sale_card-dsc">
+                            <h1 class="sale_card-dsc-title">"Фонд ВДО развивающихся российских компаний"</h1>
+                            <p class="sale_card-dsc-item">Получайте доход по высокодоходным облигациям российских эмитентов</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="profability">
+                    <p class="profit-title">Возможный доход с нашей компанией, основанная на исторических показателях:</p>
+                    <p><input class="cap" id="capital" placeholder="Ваш капитал"></p>
+                    <script>
+                        function fun1() {
+                            var rng=document.getElementById('r1'); //rng - это ползунок
+                            var i1=document.getElementById('capital'); // i1 - input
+                        i1.value=rng.value;
+                        }
+                    </script>
+                    <input type="range" class="polz" id="r1" min="0" max="1000000" step="1" oninput="fun1()">
+                    <p class="profit-istor">Наша историчекая доходность</p>
+                    <p class="profit-percent"> 17,35%</p>
+                    <button class="profit" onclick="func()">Ваш возможный результат</button>
+                    <p class="res" id="result"></p>
+                    <p class="profit-risk">Мы не гарантируем положительный результат, любые инвестиции несут риски!</p>
+                    <p class="profit-risk">*Расчёты производятся исходя из исторической доходности</p>
+                    <script>
+                        function func(){
+                              var capital = Number(document.getElementById("capital").value);
+                              var result = capital/100*17.35+capital;
+                    
+                              document.getElementById("result").innerHTML = result;
+                              }
+                     </script>
+                </div>
+            </div>
+        </section>
+        <section class="about_us" id="about_us">
+            <div class="wrapper">
+                <div class="about_us_me">
+                    <img src="./img/svg/me.svg" alt="me">
+                    <div class="my_words">
+                        От конкурентов нас отличает отсутствие «коробочных решений», одинаковых для всех. В зависимости от задач каждого конкретного клиента мы меняем параметры инвестиционных продуктов, подбирая для него лучшие идеи, отвечающие именно его задачам. Каждое предложение мы формируем индивидуально, а наработанные связи с международными контрагентами позволяют нам делать это на максимально выгодных для инвестора условиях.
+                    </div>
+                </div>
+                <div class="my_name_and_offer">
+                    <h3 class="my_name">
+                        Денис Мариненко
+                    </h3>
+                    <h3 class="my_offer">
+                        Директор по инвестициям
+                    </h3>
+                </div> 
+                <div class="principe">
+                    <h1 class="mainprincipe">
+                        Принцип работы
+                    </h1>
+                    <div class="principe_cards">
+                        <div class="principe_card">
+                            <h1 class="principe_num">
+                                1.
+                            </h1>
+                            <p class="principe_card-title">
+                                Определение целей и задач
+                            </p>
+                            <div class="principe_card-line">
+                                <img src="./img/svg/Line.svg" alt="Line principe">
+                            </div>
+                            <p class="principe_card-desc">
+                                Вы определяете ожидаемую доходность, валюту и срок инвестирования, мы определяем ваш допустимый уровень риска и предлагаем выбрать стратегию, подходящую вашему инвестиционному профилю.
+                            </p>
+
+                        </div>
+                        <div class="principe_card">
+                            <h1 class="principe_num">
+                                2.
+                            </h1>
+                            <p class="principe_card-title">
+                                Формирование портфеля
+                            </p>
+                            <div class="principe_card-line">
+                                <img src="./img/svg/Line.svg" alt="Line principe">
+                            </div>
+                            <p class="principe_card-desc">
+                                После выбора подходящей стратегии мы формируем индивидуальный портфель в соответствии с вашими приоритетами и задачами.
+                            </p>
+
+                        </div>
+                        <div class="principe_card">
+                            <h1 class="principe_num">
+                                3.
+                            </h1>
+                            <p class="principe_card-title">
+                                Работа профессионала
+                            </p>
+                            <div class="principe_card-line">
+                                <img src="./img/svg/Line.svg" alt="Line principe">
+                            </div>
+                            <p class="principe_card-desc">
+                                Все инвестиционные решения принимает управляющий, действующий в рамках целей, которые вы установили.
+                            </p>
+                        </div>
+                        <div class="principe_card">
+                            <h1 class="principe_num">
+                                4.
+                            </h1>
+                            <p class="principe_card-title">
+                                Контроль управления
+                            </p>
+                            <div class="principe_card-line">
+                                <img src="./img/svg/Line.svg" alt="Line principe">
+                            </div>
+                            <p class="principe_card-desc">
+                                Вы получаете регулярный отчет о доходности портфеля.
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="more_inform_cards" id="more_inform-cards">
+            <div class="wrapper">
+                <div class="more_inform-cards">
+                    <div class="more_inform_card">
+                        <p class="more_info_card-title">Получить</p>
+                        <p class="more_info_card-title">Больше</p>
+                        <p class="more_info_card-title">Информации</p>
+                    </div>
+                    <div class="more_inform_card">
+                        <p class="more_inform-dsc">Заполните ваши данные, в ближайшее время наш менеджер свяжется с вами.</p>
+                        <form action="./test.php" method="post">
+                            <p><input type="text" name="user_name" class="info" placeholder="Ваше имя"></p>
+                            <p><input type="text" name="user_phone" class="info" placeholder="Телефон"></p>
+                            <p><input type="text" name="user_email" class="info" placeholder="E-mail"></p>
+                            <p><button type="submit" class="info_btn">Отправить</button></p>
+                        </form>
+                        <p><form>
+                            <label>
+                            <input type="checkbox" class="checkbox">
+                            Даю согласие на обработку персональных данных
+                            </label>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
